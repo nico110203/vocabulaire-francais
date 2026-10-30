@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vocabulaire Édito A1</title>
+<meta name="description" content="Vocabulaire des unités 0 à 2 d'Édito A1 : tableau et flashcards.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇫🇷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Vocabulaire <span>Édito A1</span></h1>
+    <p class="sub">Unités 0 à 2 · français · English · 中文</p>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-mode="table" aria-selected="true">Tableau</button>
+      <button role="tab" data-mode="cards" aria-selected="false">Flashcards</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="filters">
+    <div class="units" id="units"></div>
+    <div class="row">
+      <select id="theme" aria-label="Thème"></select>
+      <label class="toggle"><input type="checkbox" id="showZh" checked> 中文</label>
+    </div>
+  </section>
+
+  <section id="tableView">
+    <input type="search" id="search" placeholder="Rechercher un mot… / Search…" aria-label="Rechercher">
+    <div id="tables"></div>
+  </section>
+
+  <section id="cardsView" hidden>
+    <div class="row cardopts">
+      <select id="direction" aria-label="Sens">
+        <option value="en-fr">English → Français</option>
+        <option value="fr-en">Français → English</option>
+        <option value="zh-fr">中文 → Français</option>
+      </select>
+      <button class="ghost" id="shuffle">Mélanger</button>
+    </div>
+    <p class="progress" id="progress"></p>
+    <div class="card" id="card" tabindex="0" aria-live="polite">
+      <div class="inner">
+        <div class="face front"><span class="label" id="frontLabel"></span><span class="word" id="frontWord"></span><span class="hint">Touchez pour retourner</span></div>
+        <div class="face back"><span class="label" id="backLabel"></span><span class="word" id="backWord"></span><span class="extra" id="backExtra"></span>
+          <button class="speak" id="cardSpeak" aria-label="Écouter">🔊</button></div>
+      </div>
+    </div>
+    <div class="nav">
+      <button class="ghost" id="prev" aria-label="Précédent">←</button>
+      <button class="again" id="again">À revoir</button>
+      <button class="known" id="known">Je sais ✓</button>
+      <button class="ghost" id="next" aria-label="Suivant">→</button>
+    </div>
+    <div class="done" id="done" hidden>
+      <p id="doneText"></p>
+      <div class="row center">
+        <button class="again" id="redoMissed">Revoir les mots ratés</button>
+        <button class="ghost" id="restart">Tout recommencer</button>
+      </div>
+    </div>
+    <p class="keys">Clavier : espace = retourner · ← → = naviguer</p>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
