@@ -14,11 +14,18 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <h1>Vocabulaire <span>Édito A1</span></h1>
-    <p class="sub">Unités 0 à 2 · français · English · 中文</p>
+    <div class="titlebar">
+      <h1><span data-i18n="title">Vocabulaire</span> <em>Édito A1</em></h1>
+      <div class="lang" role="group" aria-label="Langue / Language / 語言">
+        <button data-lang="fr">FR</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中文</button>
+      </div>
+    </div>
+    <p class="sub" data-i18n="subtitle"></p>
     <nav class="tabs" role="tablist">
-      <button role="tab" data-mode="table" aria-selected="true">Tableau</button>
-      <button role="tab" data-mode="cards" aria-selected="false">Flashcards</button>
+      <button role="tab" data-mode="table" data-i18n="tabTable" aria-selected="true"></button>
+      <button role="tab" data-mode="cards" data-i18n="tabCards" aria-selected="false"></button>
     </nav>
   </div>
 </header>
@@ -27,47 +34,44 @@
   <section class="filters">
     <div class="units" id="units"></div>
     <div class="row">
-      <select id="theme" aria-label="Thème"></select>
-      <label class="toggle"><input type="checkbox" id="showZh" checked> 中文</label>
+      <select id="theme" data-i18n-label="theme"></select>
     </div>
   </section>
 
   <section id="tableView">
-    <input type="search" id="search" placeholder="Rechercher un mot… / Search…" aria-label="Rechercher">
+    <input type="search" id="search" data-i18n-placeholder="search">
     <div id="tables"></div>
   </section>
 
   <section id="cardsView" hidden>
     <div class="row cardopts">
-      <select id="direction" aria-label="Sens">
-        <option value="en-fr">English → Français</option>
-        <option value="fr-en">Français → English</option>
-        <option value="zh-fr">中文 → Français</option>
+      <select id="direction" data-i18n-label="direction">
+        <option value="fr" data-i18n="dirFr"></option>
+        <option value="other" data-i18n="dirOther"></option>
       </select>
-      <button class="ghost" id="shuffle">Mélanger</button>
+      <button class="ghost" id="shuffle" data-i18n="shuffle"></button>
     </div>
     <p class="progress" id="progress"></p>
     <div class="card" id="card" tabindex="0" aria-live="polite">
       <div class="inner">
-        <div class="face front"><span class="label" id="frontLabel"></span><span class="word" id="frontWord"></span><span class="hint">Touchez pour retourner</span></div>
-        <div class="face back"><span class="label" id="backLabel"></span><span class="word" id="backWord"></span><span class="extra" id="backExtra"></span>
-          <button class="speak" id="cardSpeak" aria-label="Écouter">🔊</button></div>
+        <div class="face front" id="front"></div>
+        <div class="face back" id="back"></div>
       </div>
     </div>
     <div class="nav">
-      <button class="ghost" id="prev" aria-label="Précédent">←</button>
-      <button class="again" id="again">À revoir</button>
-      <button class="known" id="known">Je sais ✓</button>
-      <button class="ghost" id="next" aria-label="Suivant">→</button>
+      <button class="ghost" id="prev" aria-label="←">←</button>
+      <button class="again" id="again" data-i18n="again"></button>
+      <button class="known" id="known" data-i18n="known"></button>
+      <button class="ghost" id="next" aria-label="→">→</button>
     </div>
     <div class="done" id="done" hidden>
       <p id="doneText"></p>
       <div class="row center">
-        <button class="again" id="redoMissed">Revoir les mots ratés</button>
-        <button class="ghost" id="restart">Tout recommencer</button>
+        <button class="again" id="redoMissed" data-i18n="redoMissed"></button>
+        <button class="ghost" id="restart" data-i18n="restart"></button>
       </div>
     </div>
-    <p class="keys">Clavier : espace = retourner · ← → = naviguer</p>
+    <p class="keys" data-i18n="keys"></p>
   </section>
 </main>
 

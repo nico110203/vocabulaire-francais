@@ -44,7 +44,11 @@ button { cursor: pointer; }
 
 .top { padding: 28px 0 0; border-bottom: 1px solid var(--line); background: var(--surface); }
 h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.9rem; margin: 0; letter-spacing: -.01em; }
-h1 span { color: var(--accent); }
+h1 em { font-style: normal; color: var(--accent); }
+.titlebar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang button { border: 0; background: none; border-radius: 999px; padding: 5px 12px; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
 .sub { margin: 2px 0 16px; color: var(--muted); font-size: .95rem; }
 .tabs { display: flex; gap: 4px; }
 .tabs button {
@@ -68,8 +72,6 @@ select, input[type="search"] {
 }
 select { flex: 1 1 220px; }
 input[type="search"] { width: 100%; margin: 8px 0 4px; }
-.toggle { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; color: var(--muted); }
-.toggle input { accent-color: var(--accent); width: 18px; height: 18px; }
 
 /* Tableau */
 .group { margin: 22px 0; }
@@ -85,10 +87,6 @@ th { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color:
 td.fr { font-weight: 600; }
 td.en { color: var(--text); }
 td.zh { color: var(--muted); }
-td.sp, th.sp { width: 44px; text-align: center; padding: 4px; }
-.mini { border: 0; background: none; font-size: 1.05rem; padding: 6px; border-radius: 8px; }
-.mini:hover { background: var(--accent-soft); }
-body.no-zh .zh { display: none; }
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
 
 @media (max-width: 560px) {
@@ -112,9 +110,8 @@ body.no-zh .zh { display: none; }
 .card:focus-visible .face { outline: 2px solid var(--accent); outline-offset: 3px; }
 .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
 .word { font-family: Fraunces, Georgia, serif; font-size: 1.9rem; line-height: 1.2; font-weight: 600; overflow-wrap: anywhere; }
-.extra { color: var(--muted); font-size: .95rem; }
+.word.zhword { font-family: inherit; font-size: 1.5rem; color: var(--muted); }
 .hint { color: var(--muted); font-size: .8rem; position: absolute; bottom: 14px; }
-.speak { border: 0; background: var(--surface); border-radius: 999px; width: 44px; height: 44px; font-size: 1.2rem; box-shadow: var(--shadow); }
 .nav { display: flex; gap: 8px; justify-content: center; margin: 18px auto 0; max-width: 520px; }
 .nav .known, .nav .again { flex: 1; }
 .known, .again { border: 0; border-radius: 10px; padding: 11px 14px; font-weight: 600; color: #fff; }
